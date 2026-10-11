@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere | Live Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="#" class="logo">☁ atmosphere<span>.</span></a>
+
+            <div class="nav-right">
+                <span class="live"><i></i> LIVE WEATHER</span>
+                <button id="themeToggle" class="theme-btn"
+                    aria-label="Toggle theme">☀️</button>
+            </div>
+        </header>
+
+        <!-- SEARCH -->
+        <section class="hero">
+            <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+            <h1>Feel the weather<span>.</span></h1>
+            <p class="subtitle">A little forecast, a better day.</p>
+
+            <form id="searchForm" class="search-box">
+                <span>⌕</span>
+                <input id="cityInput" type="text"
+                    placeholder="Search any city..." required>
+                <button id="searchButton" type="submit">Search →</button>
+            </form>
+        </section>
+
+        <p id="statusMessage" class="status">
+            Search a city to discover its weather.
+        </p>
+
+        <!-- CURRENT WEATHER -->
+        <section id="weatherSection" class="weather-grid hidden">
+
+            <article class="panel current-weather">
+                <div class="card-heading">
+                    <div>
+                        <p class="eyebrow">CURRENT WEATHER</p>
+                        <h2 id="cityName">City</h2>
+                        <p id="localTime" class="muted">Local time</p>
+                    </div>
+                    <span class="live-tag">LIVE</span>
+                </div>
+
+                <div class="temperature-row">
+                    <div>
+                        <h3 class="temperature">
+                            <span id="temperature">--</span><sup>°C</sup>
+                        </h3>
+                        <p id="description" class="description">Weather</p>
+                        <p class="muted">
+                            Feels like <strong id="feelsLike">--°C</strong>
+                        </p>
+                    </div>
+
+                    <img id="weatherIcon" class="weather-icon"
+                        src="" alt="Weather icon">
+                </div>
+            </article>
+
+            <!-- FOUR WEATHER DETAILS -->
+            <article class="panel details-panel">
+                <div class="card-heading">
+                    <div>
+                        <p class="eyebrow">AT A GLANCE</p>
+                        <h2>Weather details</h2>
+                    </div>
+                    <span class="sparkle">✦</span>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail">
+                        <span class="detail-icon">💧</span>
+                        <div>
+                            <p>Humidity</p>
+                            <h3 id="humidity">--%</h3>
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-icon">💨</span>
+                        <div>
+                            <p>Wind speed</p>
+                            <h3 id="windSpeed">-- km/h</h3>
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-icon">👁️</span>
+                        <div>
+                            <p>Visibility</p>
+                            <h3 id="visibility">-- km</h3>
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-icon">◉</span>
+                        <div>
+                            <p>Pressure</p>
+                            <h3 id="pressure">-- hPa</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- HOURLY FORECAST -->
+        <section id="hourlySection" class="section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLAN YOUR DAY</p>
+                    <h2>Hourly forecast</h2>
+                </div>
+                <span class="muted">Next hours</span>
+            </div>
+
+            <div id="hourlyForecast" class="hourly-grid"></div>
+        </section>
+
+        <!-- FIVE DAY FORECAST -->
+        <section id="dailySection" class="section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LOOKING AHEAD</p>
+                    <h2>5-day forecast</h2>
+                </div>
+                <span class="muted">Your week</span>
+            </div>
+
+            <div id="dailyForecast" class="daily-list"></div>
+        </section>
+
+        <!-- RECENT SEARCHES -->
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR SHORTLIST</p>
+                    <h2>Recent searches</h2>
+                </div>
+                <button id="clearHistory" class="clear-btn">Clear all</button>
+            </div>
+
+            <div id="recentSearches" class="recent-list"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <a href="#" class="logo">☁ atmosphere<span>.</span></a>
+            <p>Made by Jigyasha ✦ Stay weather-aware.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
